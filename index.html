@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+      
+      }
+      #main_container img {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+      }
+      #main_container img:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        
+      }
+      #main_container div {
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        overflow: hidden;
+        box-shadow: rgba(10, 2, 115, 0.25) 0px 54px 55px,
+          rgba(10, 2, 115, 0.25) 0px -12px 30px,
+          rgba(10, 2, 115, 0.25) 0px 4px 6px, rgba(10, 2, 115, 0.25) 0px 12px 13px,
+          rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      h1{
+        margin: 5px;
+      }
+      h3{
+        margin: 5px;
+      }
+      @media screen and (min-width:200px) and (max-width:767px) {
+        #main_container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+  
+      
+      }
+      @media screen and (min-width:767px) and (max-width:1080px) {
+        #main_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+  
+      
+      
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="main_container"></div>
+  </body>
+  <script>
+    let main_container = document.getElementById("main_container");
+
+    let data = [
+      {
+        sr_no: 1,
+        name: "India",
+        rank: "Captain",
+        mobile_no: "123-456-7890",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1654717-8479279.png",
+      },
+      {
+        sr_no: 2,
+        name: "India",
+        rank: "Lieutenant",
+        mobile_no: "987-654-3210",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1654725-4310788.png",
+      },
+      {
+        sr_no: 3,
+        name: "India",
+        rank: "Sergeant",
+        mobile_no: "555-555-5555",
+        img: "https://w0.peakpx.com/wallpaper/689/463/HD-wallpaper-cricket-team-india-india-cricket.jpg",
+      },
+      {
+        sr_no: 4,
+        name: "Rishab",
+        rank: "Major",
+        mobile_no: "111-222-3333",
+        img: "https://e1.pxfuel.com/desktop-wallpaper/936/439/desktop-wallpaper-indian-cricket-team-cricket-players-jersey.jpg",
+      },
+      {
+        sr_no: 5,
+        name: "Virat",
+        rank: "Lieutenant",
+        mobile_no: "444-444-4444",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1655168-9257513.png",
+      },
+      {
+        sr_no: 6,
+        name: "India",
+        rank: "Sergeant",
+        mobile_no: "777-777-7777",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1655168-9257513.png",
+      },
+      {
+        sr_no: 7,
+        name: "India",
+        rank: "Captain",
+        mobile_no: "999-999-9999",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1655168-9257513.png",
+      },
+      {
+        sr_no: 8,
+        name: "India",
+        rank: "Lieutenant",
+        mobile_no: "666-666-6666",
+        img: "https://w0.peakpx.com/wallpaper/689/463/HD-wallpaper-cricket-team-india-india-cricket.jpg",
+      },
+      {
+        sr_no: 9,
+        name: "India",
+        rank: "Sergeant",
+        mobile_no: "888-888-8888",
+        img: "https://gtwallpaper.org/sites/default/files/wallpaper/228903/indian-cricketer-wallpapers-228903-1655168-9257513.png",
+      },
+    ];
+
+    function getdata() {
+      data.map(function (ele) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = ele.img;
+        let name = document.createElement("h1");
+        name.innerText = ele.name;
+        let rank = document.createElement("h3");
+        rank.innerText = ele.rank;
+        let mobile = document.createElement("h3");
+        mobile.innerText = ele.mobile_no;
+        div.append(img, name, rank, mobile);
+        main_container.append(div);
+      });
+      console.log(ele);
+    }
+    getdata();
+  </script>
+</html>
